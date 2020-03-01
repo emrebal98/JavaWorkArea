@@ -1,11 +1,14 @@
 
 public class Combat extends OnlineGame {
 
+	// region Constructor
 	public Combat(String GameName, int MaxNumberOfPlayers) {
 		setGameName(GameName);
 		setMaxNumberOfSimultaneousPlayers(MaxNumberOfPlayers);
 	}
+	// endregion
 
+	// region Methods
 	/**
 	 * 
 	 * @param Age  Age of the player
@@ -17,10 +20,11 @@ public class Combat extends OnlineGame {
 			boolean Success = join_leave(Type);
 			if (Type && Success)
 				System.out.println("Player joined the game. Age: " + Age);
-			else if(Success)
+			else if (Success)
 				System.out.println("Player left the game. Age: " + Age);
 		} else
 			System.out.println("Under age of 10 is not allowed to join the game.");
 
 	}
+	// endregion
 }
