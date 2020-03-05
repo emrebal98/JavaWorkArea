@@ -14,7 +14,7 @@ public class OnlineGame {
 	}
 
 	public void setErrorMessage() {
-		//to just erase the previous error message;
+		// to just erase the previous error message;
 		ErrorMessage = "";
 	}
 
@@ -50,7 +50,7 @@ public class OnlineGame {
 	 */
 	protected void join_leave(boolean Type) {
 
-		if (Type) {//Join sutff
+		if (Type) {// Join sutff
 
 			if (numberOfOnlinePlayers < maxNumberOfSimultaneousPlayers && numberOfOnlinePlayers >= 0) {
 				numberOfOnlinePlayers++;
@@ -60,7 +60,7 @@ public class OnlineGame {
 				ErrorMessage = "Maximum number of player has reached.";
 			}
 
-		} else {//Leave stuff
+		} else {// Leave stuff
 
 			if (numberOfOnlinePlayers > 0) {
 				numberOfOnlinePlayers--;

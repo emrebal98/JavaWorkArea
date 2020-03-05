@@ -30,35 +30,36 @@ public class TeamSports extends OnlineGame {
 	 * @param Type Join=true, Leave=false
 	 */
 	protected void join_leave(boolean Team, boolean Type) {
-		
-		if (Type) {//Join stuff
-			
-			if (Team && teamA < getMaxNumberOfSimultaneousPlayers() / 2) {//Team A Join stuff
-				 join_leave(Type);
+
+		if (Type) {// Join stuff
+
+			if (Team && teamA < getMaxNumberOfSimultaneousPlayers() / 2) {// Team A Join stuff
+				join_leave(Type);
 				if (!getErrorMessage().isEmpty())
 					return;
 				teamA++;
 				System.out.println("Player joined the game for Team A");
-			} else if (!Team && teamB < getMaxNumberOfSimultaneousPlayers() / 2) {//Team B Join stuff
-				 join_leave(Type);
+			} else if (!Team && teamB < getMaxNumberOfSimultaneousPlayers() / 2) {// Team B Join stuff
+				join_leave(Type);
 				if (!getErrorMessage().isEmpty())
 					return;
 				teamB++;
 				System.out.println("Player joined the game for Team B");
 			} else {
 				String endText = Team ? "Team A" : "Team B";
-				System.out.println("Player can't join the game because maximum number of player has reached for " + endText);
+				System.out.println(
+						"Player can't join the game because maximum number of player has reached for " + endText);
 			}
-		} else {//Leave stuff
+		} else {// Leave stuff
 
-			if (Team && teamA > 0) {//Team A Leave stuff
-				 join_leave(Type);
+			if (Team && teamA > 0) {// Team A Leave stuff
+				join_leave(Type);
 				if (!getErrorMessage().isEmpty())
 					return;
 				teamA--;
 				System.out.println("Player left the game from Team A");
-			} else if (!Team && teamB > 0) {//Team B Leave stuff
-				 join_leave(Type);
+			} else if (!Team && teamB > 0) {// Team B Leave stuff
+				join_leave(Type);
 				if (!getErrorMessage().isEmpty())
 					return;
 				teamB--;

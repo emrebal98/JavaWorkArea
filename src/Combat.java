@@ -16,7 +16,7 @@ public class Combat extends OnlineGame {
 	 */
 	protected void join_leave(int Age, boolean Type) {
 
-		if (Age >= 10 && Type) {//Join stuff
+		if (Age >= 10 && Type) {// Join stuff
 			join_leave(Type);
 			if (getErrorMessage().isEmpty())
 				System.out.println("Player joined the game. Age: " + Age);
@@ -24,7 +24,7 @@ public class Combat extends OnlineGame {
 				System.out.println("Player can't join the game because of Error: " + getErrorMessage());
 				setErrorMessage();// to clear error message
 			}
-		} else if (!Type) {//Leave stuff
+		} else if (!Type) {// Leave stuff
 			join_leave(Type);
 			if (getErrorMessage().isEmpty())
 				System.out.println("Player left the game.");
@@ -32,9 +32,9 @@ public class Combat extends OnlineGame {
 				System.out.println("Player can't join the game because of Error: " + getErrorMessage());
 				setErrorMessage();// to clear error message
 			}
-		}
-		else
-			System.out.println("Player can't join the game because of Reason: Under age of 10 is not allowed to join the game.");
+		} else
+			System.out.println(
+					"Player can't join the game because of Reason: Under age of 10 is not allowed to join the game.");
 	}
 	// endregion
 }
