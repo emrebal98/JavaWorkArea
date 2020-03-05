@@ -2,12 +2,22 @@
 public class OnlineGame {
 
 	// region Private Fields
+	private String ErrorMessage = "";
 	private String gameName;
 	private int numberOfOnlinePlayers;
 	private int maxNumberOfSimultaneousPlayers;
 	// endregion
 
 	// region Getter Setters
+	public String getErrorMessage() {
+		return ErrorMessage;
+	}
+
+	public void setErrorMessage() {
+		//to just erase the previous error message;
+		ErrorMessage = "";
+	}
+
 	public String getGameName() {
 		return gameName;
 	}
@@ -38,29 +48,24 @@ public class OnlineGame {
 	 * 
 	 * @param type Join=true,Leave=false
 	 */
-	protected boolean join_leave(boolean type) {
+	protected void join_leave(boolean Type) {
 
-		if (type) {
+		if (Type) {
 
 			if (numberOfOnlinePlayers < maxNumberOfSimultaneousPlayers && numberOfOnlinePlayers >= 0) {
 				numberOfOnlinePlayers++;
-				return true;
 			} else if (numberOfOnlinePlayers < 0) {
-				System.out.println("Number of players should be greater than zero");
-				return false;
+				ErrorMessage = "Number of players should be greater than zero";
 			} else {
-				System.out.println("Maximum number of player has reached.");
-				return false;
+				ErrorMessage = "Maximum number of player has reached.";
 			}
 
 		} else {
 
 			if (numberOfOnlinePlayers > 0) {
 				numberOfOnlinePlayers--;
-				return true;
 			} else {
-				System.out.println("Number of players should be greater than zero");
-				return false;
+				ErrorMessage = "Number of players should be greater than zero";
 			}
 
 		}
