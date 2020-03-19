@@ -93,7 +93,7 @@ public class GameScores {
 
 	// region Helpers
 	/**
-	 * To add a element to array
+	 * To add an element to array
 	 * 
 	 * @param arr     Array
 	 * @param element Element to be added
@@ -107,7 +107,7 @@ public class GameScores {
 	}
 
 	/**
-	 * To remove a element to array
+	 * To remove an element from array
 	 * 
 	 * @param arr     Array
 	 * @param element Element to be removed
