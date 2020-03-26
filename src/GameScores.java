@@ -67,8 +67,10 @@ public class GameScores {
 	public void UpdatePlayer(String Name, int Score) {
 		// Finding index of the player
 		int index = Arrays.asList(playerNames).indexOf(Name);
+		// Converting 0 to 00 format
+		String value = (Score < 10 ? "0" : "") + Score;
 		// Updating the highest score
-		playerScores[index] = Integer.toString(Score);
+		playerScores[index] = value;
 	}
 
 	public void FindPlayers(int Min, int Max) {
@@ -83,7 +85,7 @@ public class GameScores {
 			// 0 <= Min <= score < Max <= 100
 			if (score >= 0 && score >= Min && score < Max && score <= 100) {
 				// Printing player's name and score
-				System.out.println(playerNames[i] + "\t\t" + score);
+				System.out.println(playerNames[i] + "\t\t" + playerScores[i]);
 			}
 		}
 		System.out.println();
